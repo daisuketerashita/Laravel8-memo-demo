@@ -18,3 +18,6 @@ Route::get('/',[MemosController::class,'index'])->name('index');
 
 Route::get('/create',[MemosController::class,'create'])->name('create');
 Route::post('/create',[MemosController::class,'store'])->name('store');
+
+Route::get('/edit',[MemosController::class,'edit'])->name('edit');
+Route::post('/edit',[MemosController::class,'update'])->name('update');

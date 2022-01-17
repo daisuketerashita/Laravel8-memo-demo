@@ -25,4 +25,19 @@ class MemosController extends Controller
 
         return redirect()->route('index');
     }
+
+    //編集メモ画面の表示
+    public function edit(Request $request){
+        $memo = Memo::find($request->id);
+        return view('edit',['memo' => $memo]);
+    }
+
+    //編集メモの登録
+    public function update(Request $request){
+        $memo = Memo::find($request->id);
+        $content = $request->validate(['content' => 'required|max:500']);
+        $memo->fill($content)->save();
+
+        return redirect()->route('index');
+    }
 }
