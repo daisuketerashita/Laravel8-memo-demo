@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MemosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[MemosController::class,'index'])->name('index');
