@@ -40,4 +40,12 @@ class MemosController extends Controller
 
         return redirect()->route('index');
     }
+
+    //削除機能
+    public function delete(Request $request){
+        $memo = Memo::find($request->id);
+        $memo->delete();
+
+        return redirect()->route('index');
+    }
 }
